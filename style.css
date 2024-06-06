@@ -1,0 +1,169 @@
+:root {
+    --corDeFundo: #fdfdfd;
+    --corDaFonte: #5ccb5f;
+    --corDaFontePrincipal: #000000;
+    --corDaFonteHover: #006414;
+    --corDeFundoMenu: #333333e8;
+    --corBotaoMenu:#ffffff;
+    --corSombreamentoMenu: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    --corPretaTransparente: #333333c7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.corpo {
+    background-color: var(--corDeFundo);   
+}
+
+.cabecalho{
+    background-image: url("assets/9.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 1s;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em;
+    background-color: var(--corPretaTransparente);
+}
+
+.caixa__checkbox__label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px; 
+}
+
+.caixa__checkbox__label::after, 
+.caixa__checkbox__label::before, 
+.caixa__checkbox__label > .botao_menu {
+    content:"";
+    width: 24px;
+    height: 3px;
+    background-color: var(--corBotaoMenu);
+    z-index: 11;
+    transition: 1s;
+}
+
+#caixa__checkbox:checked ~ .caixa__checkbox__label::after{
+    background-color: var(--corBotaoMenu);
+    transform: rotate(45deg);
+    transition: 1s;
+    width: 24px;
+    transform: translateY(-8px) rotate(45deg);
+}
+
+#caixa__checkbox:checked ~ .caixa__checkbox__label::before {
+    background-color: var(--corBotaoMenu);
+    transform: translateY(8px) rotate(-45deg);
+    transition: 1s;
+    width: 24px;    
+}
+
+#caixa__checkbox:checked ~ .caixa__checkbox__label > span{
+    opacity: 0;
+}
+
+#caixa__checkbox{
+    display: none;
+}
+
+.lista__hamburguer {
+    background-color: var(--corDeFundoMenu);
+    box-shadow: var(--corSombreamentoMenu);
+    list-style-type: none;
+    height: 900px;
+    font-size: 2rem;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    padding-top: 100px;
+    z-index: 10;
+    transition: 1s;
+}
+
+.lista__hamburguer > li {
+    width: 260px;
+    text-align: center;
+    padding: 20px 0 20px 0; 
+    
+}
+
+.lista__hamburguer > li:hover {
+    background-color: var(--corDaFonteHover);
+}
+
+.lista__hamburguer > li > a {
+    width: 100%;
+    text-decoration: none;
+    color: var(--corDaFonte);
+}
+
+.lista__hamburguer > li > a:hover {
+    text-decoration: none; 
+}
+
+#caixa__checkbox:checked ~ .lista__hamburguer {
+    position: absolute;
+    left: 0;
+    transition: 1s;  
+}
+
+.navbar__logo {
+    height: 45px;
+    width: 45px;
+}
+
+.carousel {
+    padding-bottom: 270px;
+    width: 1500px;
+    height: 750px;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .carousel img {
+    display: block;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .carousel img.active {
+    opacity: 1;
+  }
+  
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 10px;
+  }
+  
+  .nav button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+  }
