@@ -126,7 +126,7 @@ html {
 }
 
 .carousel {
-    padding-bottom: 750px;
+    padding-bottom: 780px;
     background-size: cover;
     overflow: hidden;
     position: relative;
@@ -269,7 +269,7 @@ html {
     text-align: center;
 }
 
-.sessao__fotos__foto-turistico {
+.sessao__fotos__foto-turistimo {
   margin: 2px;
   width: 100%;
   object-fit: cover;
